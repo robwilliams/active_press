@@ -1,4 +1,4 @@
 module ActivePress
-  class Base < Base
+  class Base
   end
 end
