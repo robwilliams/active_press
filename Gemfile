@@ -1,11 +1,4 @@
-source 'http://rubygems.org'
+source "http://rubygems.org"
 
-gem 'activerecord', '~> 3.0.0'
-
-group :development do
-  gem 'rspec'
-  gem 'rb-fsevent'
-  gem 'growl_notify'
-  gem 'guard'
-  gem 'guard-rspec'
-end
+# Specify your gem's dependencies in active_press.gemspec
+gemspec
