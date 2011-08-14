@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["rob@r-williams.com"]
   s.homepage    = ""
   s.summary     = %q{ActivePress gives you access to wordpress from ruby}
-  s.description = %q{ActivePress is a set of models that help with using the contents of a wordpress database}
+  s.description = %q{ActivePress is a set of tools that help with accessing and manipulating the contents of a wordpress database}
 
   s.rubyforge_project = "active_press"
 
