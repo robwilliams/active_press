@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Robert Williams"]
   s.email       = ["rob@r-williams.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{ActivePress gives you access to wordpress from ruby}
+  s.description = %q{ActivePress is a set of models that help with using the contents of a wordpress database}
 
   s.rubyforge_project = "active_press"
 
@@ -18,9 +18,10 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency('activesupport', '>= 3.0.0')
-  s.add_dependency('activerecord', '>= 3.0.0')
+  s.add_dependency('activesupport', '~> 3.0.0')
+  s.add_dependency('activerecord', '~> 3.0.0')
   
-  s.add_development_dependency('rspec', '>= 2.0.0')
-  s.add_development_dependency('rake', '= 0.8.7')
+  s.add_development_dependency('rspec', '~> 2.6.0')
+  s.add_development_dependency('guard', '~> 0.6.0')
+  s.add_development_dependency('guard-rspec', '~> 0.4.0')
 end
