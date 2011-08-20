@@ -1,4 +1,2 @@
-module ActivePress
-  class Base < ActiveRecord::Base
-  end
+class ActivePress::Base < ActiveRecord::Base
 end

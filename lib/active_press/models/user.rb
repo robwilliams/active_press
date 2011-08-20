@@ -1,4 +1,3 @@
-module ActivePress
-  class User < Base
-  end
+class ActivePress::User < ActivePress::Base
+  set_primary_key "ID"
 end
