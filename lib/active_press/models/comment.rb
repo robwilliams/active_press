@@ -4,4 +4,5 @@ class ActivePress::Comment < ActivePress::Base
   
   belongs_to :post, :foreign_key => "comment_post_ID"
   belongs_to :user, :foreign_key => "user_id"
+  has_many :commentmetas, :foreign_key => "comment_id"
 end

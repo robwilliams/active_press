@@ -4,4 +4,5 @@ class ActivePress::User < ActivePress::Base
 
   has_many :posts, :foreign_key => "post_author"
   has_many :comments, :foreign_key => "user_id"
+  has_many :usermetas, :foreign_key => "user_id"
 end
