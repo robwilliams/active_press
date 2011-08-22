@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActivePress::Post do
+describe ActivePress::User do
+  it { should have_many(:posts) }
   it { should have_many(:comments) }
-  it { should belong_to(:user) }
 end
