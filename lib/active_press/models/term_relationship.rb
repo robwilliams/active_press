@@ -3,4 +3,6 @@ class ActivePress::TermRelationship < ActivePress::Base
 
   belongs_to :post, :foreign_key => "object_id"
   belongs_to :term_taxonomy, :foreign_key => "term_taxonomy_id"
+  belongs_to :category, :foreign_key => "term_taxonomy_id"
+  belongs_to :tag, :foreign_key => "term_taxonomy_id"
 end
