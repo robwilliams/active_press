@@ -28,6 +28,13 @@ describe ActivePress::Post do
       end
     end
     
+    describe :before_now do
+      subject { ActivePress::Post.before_now.to_sql }
+      it "should only return posts that have a post_date_gmt before now" do
+        should include("post_date_gmt < '#{Time.now.to_s(:db)}")
+      end
+    end
+    
     describe :published do
       subject { ActivePress::Post.published }
       
@@ -36,7 +43,7 @@ describe ActivePress::Post do
       end
       
       it "should only return posts that have a post_date before now" do
-        subject.to_sql.should include("post_date < '#{Time.now.to_s(:db)}'")      
+        subject.to_sql.should include("post_date_gmt < '#{Time.now.to_s(:db)}'")      
       end
     end    
   end
