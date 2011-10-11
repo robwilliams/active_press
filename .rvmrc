@@ -1,1 +1,1 @@
-rvm use 1.9.3@active_press --create
+rvm use 1.9.3-rc1@active_press --create
