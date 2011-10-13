@@ -5,8 +5,8 @@ require "active_press/version"
 Gem::Specification.new do |s|
   s.name        = "active_press"
   s.version     = ActivePress::VERSION
-  s.authors     = ["Robert Williams"]
-  s.email       = ["rob@r-williams.com"]
+  s.authors     = ["Robert Williams", "Rich Grundy"]
+  s.email       = ["rob@r-williams.com", "rich@27smiles.com"]
   s.homepage    = ""
   s.summary     = %q{ActivePress gives you access to Wordpress from Ruby}
   s.description = %q{
