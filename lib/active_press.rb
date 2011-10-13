@@ -1,18 +1,21 @@
-require "active_record"
-require "active_press/version"
+require 'active_record'
+require 'active_press/version'
 
-require "active_press/taxonomy"
-require "active_press/models/base"
-require "active_press/models/category"
-require "active_press/models/comment"
-require "active_press/models/commentmeta"
-require "active_press/models/link"
-require "active_press/models/option"
-require "active_press/models/post"
-require "active_press/models/postmeta"
-require "active_press/models/tag"
-require "active_press/models/term"
-require "active_press/models/term_relationship"
-require "active_press/models/term_taxonomy"
-require "active_press/models/user"
-require "active_press/models/usermeta"
+module ActivePress
+  autoload :Taxonomy, 'active_press/taxonomy'
+
+  autoload :Base, 'active_press/models/base'
+  autoload :Category, 'active_press/models/category'
+  autoload :Comment, 'active_press/models/comment'
+  autoload :Commentmeta, 'active_press/models/commentmeta'
+  autoload :Link, 'active_press/models/link'
+  autoload :Option, 'active_press/models/option'
+  autoload :Post, 'active_press/models/post'
+  autoload :Postmeta, 'active_press/models/postmeta'
+  autoload :Tag, 'active_press/models/tag'
+  autoload :Term, 'active_press/models/term'
+  autoload :TermRelationship, 'active_press/models/term_relationship'
+  autoload :TermTaxonomy, 'active_press/models/term_taxonomy'
+  autoload :User, 'active_press/models/user'
+  autoload :Usermeta, 'active_press/models/usermeta'
+end
