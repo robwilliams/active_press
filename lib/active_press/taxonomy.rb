@@ -12,6 +12,10 @@ module ActivePress
          
         delegate :name, :to => :term
         delegate :slug, :to => :term
+        
+        def self.find_by_name(name)
+          includes(:term).where('terms.name = ?', name)
+        end
       end
     end
   end
