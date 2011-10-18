@@ -1,4 +1,11 @@
+# Third Party.
 require 'active_record'
+
+# Core Extensions.
+require 'active_support/core_ext/date_time/calculations'
+require 'active_support/core_ext/date/calculations'
+require 'active_support/core_ext/time/calculations'
+
 require 'active_press/version'
 
 module ActivePress

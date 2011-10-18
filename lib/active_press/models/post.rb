@@ -17,6 +17,18 @@ class ActivePress::Post < ActivePress::Base
   scope :published,      by_post_status('publish').before_now
   scope :most_recent,    order("post_date_gmt DESC")
 
+  def self.by_year(d)
+    where(:post_date_gmt => (d.beginning_of_year..d.end_of_year))
+  end
+
+  def self.by_month(d)
+    where(:post_date_gmt => (d.beginning_of_month..d.end_of_month))
+  end
+
+  def self.by_day(d)
+    where(:post_date_gmt => (d.beginning_of_day..d.end_of_day))
+  end
+
   def to_param
     post_name
   end
