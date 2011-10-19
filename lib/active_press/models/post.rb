@@ -29,6 +29,20 @@ class ActivePress::Post < ActivePress::Base
     where(:post_date_gmt => (d.beginning_of_day..d.end_of_day))
   end
 
+  def next_post
+    self.class.published.where(['id != ?', self.id])\
+      .where(:post_type => self.post_type)\
+      .where(['post_date_gmt >= ?', self.post_date_gmt])\
+      .order('post_date_gmt ASC').limit(1)
+  end
+
+  def previous_post
+    self.class.published.where(['id != ?', self.id])\
+      .where(:post_type => self.post_type)\
+      .where(['post_date_gmt <= ?', self.post_date_gmt])\
+      .order('post_date_gmt DESC').limit(1)
+  end
+
   def to_param
     post_name
   end
