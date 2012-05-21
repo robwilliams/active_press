@@ -19,15 +19,9 @@ class ActivePress::Post < ActivePress::Base
 
   # Basic post search.
   #   Requires FULLTEXT indexes on post_name and post_content
-  #   ALTER TABLE wp_posts ADD FULLTEXT(post_name);
-  #   ALTER TABLE wp_posts ADD FULLTEXT(post_content);
+  # alter table wp_posts add fulltext(post_title, post_content);
   def self.search(query)
-    where(
-      ['(MATCH(post_name) against ?) OR (MATCH(post_content) against ?)', 
-        query, 
-        query
-      ]
-    )
+    where(['MATCH (post_title, post_content) AGAINST (?) > 0', query])
   end
 
   def self.by_year(d)
