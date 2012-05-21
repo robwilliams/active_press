@@ -17,6 +17,19 @@ class ActivePress::Post < ActivePress::Base
   scope :published,      lambda { by_post_status('publish').before_now }
   scope :most_recent,    order("post_date_gmt DESC")
 
+  # Basic post search.
+  #   Requires FULLTEXT indexes on post_name and post_content
+  #   ALTER TABLE wp_posts ADD FULLTEXT(post_name);
+  #   ALTER TABLE wp_posts ADD FULLTEXT(post_content);
+  def self.search(query)
+    where(
+      ['(MATCH(post_name) against ?) OR (MATCH(post_content) against ?)', 
+        query, 
+        query
+      ]
+    )
+  end
+
   def self.by_year(d)
     where(:post_date_gmt => (d.beginning_of_year..d.end_of_year))
   end
